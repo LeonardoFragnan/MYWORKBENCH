@@ -1,0 +1,167 @@
+ USE Carros;
+-- USE sakila;
+-- INSERT INTO language
+-- VALUE
+-- (DEFAULT, 'PORTUGUÊS','2023-06-01 03:19:19'),
+-- (DEFAULT, 'SPANISH','2023-06-01 03:19:19'),
+--  (DEFAULT, 'ITALIAN','2023-06-01 03:19:19');
+
+-- INSERT INTO country 
+-- VALUES 
+	-- (DEFAULT,'BRASIL2','2023-06-01 03:19:19');
+    
+-- INSERT INTO city
+-- VALUES
+	-- (DEFAULT,'São Paulo 2',last_insert_id(),'2023-06-01 03:19:19')
+    
+    -- CREATE TABLE payment_backup AS 
+    -- SELECT * FROM payment
+    
+  --  UPDATE payment SET amount = 15.99
+   -- WHERE payment_id = 1
+   
+ --  DELETE FROM payment
+--   WHERE payment_id = 1
+
+   -- SELECT MAX(amount) AS maior,
+		 --  MIN(amount) AS menor,
+        --   AVG(amount) AS media,
+          -- SUM(amount) AS 'Total de vendas',
+         --  COUNT(amount) AS 'Numero de Vendas'
+  --  FROM payment
+-- 	WHERE staff_id = 1
+	
+    -- SELECT customer_id ,
+           -- cus.first_name AS NOME,
+           -- cus.last_name AS SOBRENOME,
+		-- SUM(amount) AS Total
+   -- FROM payment pay
+   -- JOIN customer cus 
+     --  USING(customer_id)
+   -- GROUP BY customer_id
+  --  ORDER BY total DESC
+  
+	-- SELECT customer_id ,
+		-- cus.first_name AS NOME,
+		-- cus.last_name AS SOBRENOME,
+		-- SUM(amount) AS Total,
+       --  COUNT(amount) AS Compras
+	-- FROM payment pay
+   -- JOIN customer cus 
+	-- USING(customer_id)
+   -- GROUP BY customer_id
+   -- HAVING Total >= 150 AND  Compras >= 35
+    -- ORDER BY total DESC
+    
+  -- SELECT *
+  -- FROM payment 
+  -- WHERE amount > (
+	-- SELECT AVG(amount)
+    -- FROM payment)
+    
+    -- SELECT *
+    -- FROM payment 
+     -- WHERE amount = (
+	   -- SELECT MAX(amount)
+       -- FROM payment
+      --  WHERE customer_id = 1)
+      
+       -- SELECT customer_id,
+			--  COUNT(*) AS Compras_Realizadas
+		-- FROM payment 
+       -- GROUP BY customer_id
+       -- HAVING COUNT(*) > 35
+ 
+	-- SELECT*
+    -- FROM customer
+    -- WHERE customer_id IN (
+       -- SELECT customer_id
+	   -- FROM payment 
+	   -- GROUP BY customer_id
+       -- HAVING COUNT(*) > 35)
+  
+  -- SELECT*
+    -- FROM customer
+    -- WHERE customer_id = ANY (
+       -- SELECT customer_id
+	   -- FROM payment 
+	   -- GROUP BY customer_id
+       -- HAVING COUNT(*) > 35)
+       
+-- CREATE OR REPLACE VIEW vendas_por_clientes AS
+ -- SELECT cus.customer_id, cus.first_name, cus.last_name, pay.amount
+ -- FROM customer cus
+ -- JOIN payment pay
+	-- ON cus.customer_id = pay.payment_id
+   -- ORDER BY pay.amount ASC
+    
+   -- SELECT TRIM('carros 1')
+    -- SELECT RTRIM('carros 1')
+     -- SELECT LTRIM('carros 1')
+      -- SELECT TRIM(BOTH 'a' FROM 'aaaacarrosaaa') 
+       -- SELECT TRIM(LEADING 'a' FROM 'aaaacarrosaaa')
+        -- SELECT TRIM(TRAILING 'a' FROM 'aaaacarrosaaa')
+          -- SELECT LOCATE('a','carros')
+         -- SELECT LCASE('carros')
+         -- SELECT UCASE('carros')
+        -- SELECT LENGTH('carros')
+        -- SELECT REPEAT('carros ,', 5)
+       -- SELECT RIGHT('carros', 3)
+        -- SELECT LEFT('carros', 3)
+-- CREATE DATABASE teste;
+-- DROP DATABASE teste;
+-- CREATE DATABASE Carros;
+-- CREATE TABLE marcas (
+	-- marcas_id INT NOT NULL AUTO_INCREMENT,
+    -- nome_marcas VARCHAR(255) NOT NULL,
+   -- PRIMARY KEY (marcas_id));
+-- ALTER TABLE marcas ADD origem VARCHAR(255)
+-- CREATE TABLE inventario (
+	-- invent_id INT NOT NULL AUTO_INCREMENT,
+    -- modelo VARCHAR(255) NOT NULL,
+    -- transmissao VARCHAR(255) NOT NULL,
+   -- motor VARCHAR(255) NOT NULL,
+   -- combustivel VARCHAR(255) NOT NULL,
+   -- marcas_id INT NOT NULL,
+   -- PRIMARY KEY (invent_id),
+   -- FOREIGN KEY (marcas_id) REFERENCEs marcas(marcas_id)
+    -- );
+    
+ -- CREATE TABLE clientes(
+	-- clientes_id INT NOT NULL AUTO_INCREMENT,
+    -- nome VARCHAR(255) NOT NULL,
+    -- sobrenome VARCHAR(255) NOT NULL,
+    -- endereço VARCHAR(255) NOT NULL,
+    -- PRIMARY KEY (clientes_id)
+   -- );  
+    
+   -- INSERT INTO clientes( nome,sobrenome,endereço)
+   -- VALUE('leonardo', 'Fragnan', 'Rua2'),
+		-- ('Ronaldo', 'Fragnan', 'Rua3'),
+        -- ('Arnaldo', 'Fragnan', 'Rua1'),
+	    -- ('Reinaldo', 'Fragnan', 'Rua4'),
+	   --  ('Valdir', 'Fragnan', 'Rua5');
+   -- DELETE FROM clientes
+   -- WHERE clientes_id = 1;
+    
+    -- INSERT INTO marcas(marcas_id,nome_marcas,origem)
+		-- VALUE (1, 'JAGUAR', 'INGLATERRA'),
+			 -- (2, 'CHEVROLET', 'EUA'),
+             -- (3, 'BMW', 'ALEMÃ'),
+             -- (4, 'DORGE', 'ALEMÃ'),
+            --  (5, 'HIUNDAY', 'HOLANDA');
+              
+       -- INSERT INTO inventario( modelo,transmissao,motor,combustivel,marcas_id)
+	  -- VALUE('f type', 'auto', '2.5', 'Disel', 1),
+		   -- ('Camaro', 'auto', '2.5', 'flex', 2),
+           -- ('X6', 'manual', '3.0', 'Disel', 3),
+	       -- ('FREEMONT', 'semiauto', '2.0', 'gasolina', 4),
+	       -- ('I30', 'auto', '1.8', 'flex', 5);
+           
+           -- CREATE USER ana IDENTIFIED BY '1234'; 
+		   -- CREATE USER joão@localhost IDENTIFIED BY '1234';
+		  -- CREATE USER pricila@leofragnan.com IDENTIFIED BY '1234';
+             DROP USER pricila@leofragnan.com ;
+           SELECT * FROM mysql.user
+        
+    
